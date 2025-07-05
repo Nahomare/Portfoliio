@@ -292,6 +292,33 @@ footer {
     background: #0a0a0a;
 }
 
+/*Icons*/
+.tech-icons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    cursor: default;
+    margin: 0 6px;
+    transition: filter 0.3s ease;
+}
+
+.tech-icons img:hover {
+    filter: brightness(0) invert(0.7) sepia(1) saturate(5) hue-rotate(10deg);
+}
+.about-text p {
+    text-align: left;      /* Text linksbündig */
+    max-width: 700px;      /* für angenehmere Lesebreite */
+    margin-bottom: 2rem;   /* größerer Abstand nach dem Absatz */
+    line-height: 1.6;      /* angenehme Zeilenhöhe */
+}
+
+
+.nav-links {
+    margin-top: 2rem;      /* Abstand vor den Buttons */
+    display: flex;
+    gap: 1rem;             /* Abstand zwischen den Buttons */
+}
+
 /* --- MOBILE & TOUCH OPTIMIERUNGEN --- */
 
 @media (max-width: 768px) {
@@ -361,29 +388,13 @@ footer {
     }
 }
 
-/*Icons*/
 .tech-icons img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-    cursor: default;
-    margin: 0 6px;
-    transition: filter 0.3s ease;
+    width: 14px;
+    height: 14px;
+}
+/* Verhindert den orangenen Tap-Highlight auf Touchgeräten */
+button, a, input, textarea {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
 }
 
-.tech-icons img:hover {
-    filter: brightness(0) invert(0.7) sepia(1) saturate(5) hue-rotate(10deg);
-}
-.about-text p {
-    text-align: left;      /* Text linksbündig */
-    max-width: 700px;      /* für angenehmere Lesebreite */
-    margin-bottom: 2rem;   /* größerer Abstand nach dem Absatz */
-    line-height: 1.6;      /* angenehme Zeilenhöhe */
-}
-
-
-.nav-links {
-    margin-top: 2rem;      /* Abstand vor den Buttons */
-    display: flex;
-    gap: 1rem;             /* Abstand zwischen den Buttons */
-}
