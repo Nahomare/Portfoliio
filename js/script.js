@@ -60,16 +60,41 @@ animateParticles();
 
 
 // Danke message
-    let seconds = 10;
-    const countdownEl = document.getElementById('countdown');
 
-    const countdown = setInterval(() => {
-    seconds--;
-    countdownEl.textContent = seconds;
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-    if (seconds <= 0) {
-    clearInterval(countdown);
-    window.location.href = 'index.html'; // Zur Startseite
-}
-}, 1000);
+    const form = e.target;
+    const formData = new FormData(form);
+    const thankYou = document.querySelector(".thank-you-message");
 
+    try {
+        const res = await fetch("https://formspree.io/f/xkgbajbj", {
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: formData
+        });
+
+        if (res.ok) {
+            form.style.display = "none";
+            thankYou.style.display = "block";
+
+            let seconds = 15;
+            const countdown = document.getElementById("countdown");
+            const timer = setInterval(() => {
+                seconds--;
+                countdown.textContent = seconds;
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    window.location.href = "index.html"; // oder deine Startseite
+                }
+            }, 1000);
+        } else {
+            alert("Fehler beim Senden. Bitte versuche es erneut.");
+        }
+
+    } catch (err) {
+        alert("Verbindungsfehler. Bitte später nochmal probieren.");
+        console.error(err);
+    }
+});
