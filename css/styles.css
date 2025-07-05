@@ -351,8 +351,8 @@ footer {
     }
 
     .portrait {
-        width: 100px !important;
-        height: 100px !important;
+        width: 200px !important;
+        height: 200px !important;
     }
 
     .projects-list {
@@ -387,8 +387,8 @@ footer {
     }
 
     .portrait {
-        width: 80px !important;
-        height: 80px !important;
+        width: 200px !important;
+        height: 200px !important;
     }
     .tech-icons img {
         width: 10px;
