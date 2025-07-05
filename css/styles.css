@@ -386,6 +386,10 @@ footer {
         width: 80px !important;
         height: 80px !important;
     }
+    .tech-icons img {
+        width: 14px;
+        height: 14px;
+    }
 }
 
 .tech-icons img {
