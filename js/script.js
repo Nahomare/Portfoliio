@@ -57,3 +57,19 @@ function animateParticles() {
 }
 
 animateParticles();
+
+
+// Danke message
+    let seconds = 10;
+    const countdownEl = document.getElementById('countdown');
+
+    const countdown = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds;
+
+    if (seconds <= 0) {
+    clearInterval(countdown);
+    window.location.href = 'index.html'; // Zur Startseite
+}
+}, 1000);
+

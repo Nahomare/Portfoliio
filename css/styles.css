@@ -337,3 +337,27 @@ footer {
     }
 }
 
+/* Dankes Nachricht*/
+.thank-you-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #e0e0e0;
+}
+
+.thank-you-message h1 {
+    font-size: 2rem;
+    color: #f95738;
+    margin-bottom: 1rem;
+}
+
+.thank-you-message p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.highlight-link {
+    color: #f95738;
+    text-decoration: underline;
+}
