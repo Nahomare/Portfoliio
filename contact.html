@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Nati</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div class="custom-cursor"></div>
+<div class="cursor-glow"></div>
+
+<div class="contact-container">
+    <h1>Kontakt</h1>
+    <p>Schreib mir gerne eine Nachricht:</p>
+
+    <form
+            action="https://formspree.io/f/xkgbajbj"
+            method="POST"
+            class="contact-form"
+    >
+        <input type="hidden" name="_subject" value="Neue Nachricht über das Kontaktformular">
+        <input type="hidden" name="_redirect" value="https://deine-seite.de/danke.html">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <label for="email">Deine E-Mail*</label>
+        <input type="email" id="email" name="email" required placeholder="z.B. du@mail.de" />
+
+        <label for="message">Nachricht*</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Was möchtest du mir sagen?"></textarea>
+
+        <button type="submit">Absenden</button>
+    </form>
+
+</div>
+
+<footer>
+    <small>© 2025 Nati – Alle Rechte vorbehalten.</small>
+</footer>
+
+<script src="js/cursor.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
