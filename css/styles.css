@@ -1,5 +1,4 @@
 /* Reset & Basis */
-/* Versteckt den Standardcursor überall (wird auf Mobile später überschrieben) */
 body, button, a, input, textarea {
     cursor: none !important;
 }
@@ -18,10 +17,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    cursor: none; /* Standardcursor entfernen */
+    cursor: none;
     position: relative;
+    padding: 1rem;
 }
 
+/* Container & Layout */
 .container {
     text-align: center;
     max-width: 480px;
@@ -29,6 +30,7 @@ body {
     background: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(249, 87, 56, 0.7);
+    margin: 2rem auto;
 }
 
 .header h1 {
@@ -78,8 +80,8 @@ body {
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer; /* touch-freundlich */
-    touch-action: manipulation; /* verbessert touch responsiveness */
+    cursor: pointer;
+    touch-action: manipulation;
 }
 
 .btn:hover,
@@ -206,7 +208,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
+    max-width: 480px;
     max-height: 90vh;
     overflow-y: auto;
     background-color: #121212;
@@ -288,56 +290,7 @@ footer {
     background: #0a0a0a;
 }
 
-/* --- MOBILE & TOUCH OPTIMIERUNGEN --- */
-
-@media (hover: none), (pointer: coarse) {
-    /* Standardcursor auf Mobile sichtbar machen */
-    body, button, a, input, textarea {
-        cursor: auto !important;
-    }
-    /* Custom Cursor ausblenden */
-    .custom-cursor,
-    .cursor-glow {
-        display: none !important;
-    }
-
-    /* Buttons größere Klickflächen */
-    .btn,
-    .btn-primary {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-
-    /* Portrait kleiner */
-    .portrait {
-        width: 140px;
-        height: 140px;
-    }
-
-    /* Überschriften kleiner */
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    /* Projekte weniger Abstand */
-    .projects-list {
-        gap: 1.5rem;
-    }
-
-    /* Kontakt Container: max Breite und max Höhe anpassen */
-    .contact-container {
-        max-width: 90vw;
-        max-height: 90vh;
-        padding: 1.5rem;
-    }
-}
-
-/* Dankes Nachricht*/
+/* Dankes Nachricht */
 .thank-you-message {
     text-align: center;
     padding: 3rem 1rem;
@@ -357,50 +310,92 @@ footer {
     line-height: 1.6;
 }
 
-.highlight-link {
-    color: #f95738;
-    text-decoration: underline;
-}
-/* Kontakt Container Anpassungen für kleine Bildschirme */
-@media (max-width: 480px) {
-    .contact-container {
-        max-width: 90vw !important;    /* max Breite 90% vom Viewport */
-        max-height: 85vh !important;   /* max Höhe auf 85% setzen */
-        padding: 1.5rem !important;    /* weniger Padding */
-        overflow-y: auto !important;   /* Scrollen erlauben, falls Inhalt zu groß */
-        border-radius: 12px !important; /* leicht kleinere Ecken */
+/* --- Verbesserte MOBILE-Optimierung: luftiger, kleiner --- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
-    /* Formularfelder und Buttons */
-    .contact-form input,
-    .contact-form textarea,
+    .container,
+    .contact-container,
+    .thank-you-message {
+        max-width: 90vw;
+        padding: 1rem 1.2rem;
+        border-radius: 10px;
+        margin: 2rem auto;
+        box-shadow: 0 0 10px rgba(249, 87, 56, 0.5);
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .portrait {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn,
+    .btn-primary,
     .contact-form button {
-        font-size: 1rem !important;
-        padding: 0.8rem 1rem !important;
-        border-radius: 8px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1.2rem !important;
     }
 
-    /* Button hover & active */
-    .contact-form button:hover {
-        background-color: #ff6f4a !important;
+    .projects-list {
+        gap: 1.2rem;
     }
 
-    /* Überschrift & Text im Kontakt */
+    .project h2 {
+        font-size: 1.2rem;
+    }
+
+    .project p {
+        font-size: 0.9rem;
+    }
+
+    .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+
     .contact-container h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem;
     }
 
     .contact-container p {
-        font-size: 0.95rem !important;
+        font-size: 0.9rem;
     }
-}
 
-/* Buttons - evtl. bei Bedarf noch etwas größer machen für Touch */
-@media (hover: none), (pointer: coarse) {
-    .contact-form button {
-        padding: 1rem 1.2rem !important;
-        font-size: 1.1rem !important;
+    .thank-you-message h1 {
+        font-size: 1.6rem;
+    }
+
+    .thank-you-message p {
+        font-size: 0.95rem;
+    }
+
+    .custom-cursor,
+    .cursor-glow {
+        display: none !important;
+    }
+
+    body, button, a, input, textarea {
+        cursor: auto !important;
     }
 }
