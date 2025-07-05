@@ -19,10 +19,8 @@ body {
     min-height: 100vh;
     cursor: none;
     position: relative;
-    padding: 1rem;
 }
 
-/* Container & Layout */
 .container {
     text-align: center;
     max-width: 480px;
@@ -30,7 +28,6 @@ body {
     background: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(249, 87, 56, 0.7);
-    margin: 2rem auto;
 }
 
 .header h1 {
@@ -100,6 +97,11 @@ body {
 .btn-primary:focus {
     background-color: #e0e0e0;
     color: #121212;
+}
+
+.btn-back {
+    white-space: nowrap;
+    min-width: 180px;
 }
 
 .footer {
@@ -208,7 +210,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 480px;
+    max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
     background-color: #121212;
@@ -290,126 +292,98 @@ footer {
     background: #0a0a0a;
 }
 
-/* Dankes Nachricht */
-.thank-you-message {
-    text-align: center;
-    padding: 3rem 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #e0e0e0;
-}
+/* --- MOBILE & TOUCH OPTIMIERUNGEN --- */
 
-.thank-you-message h1 {
-    font-size: 2rem;
-    color: #f95738;
-    margin-bottom: 1rem;
-}
-
-.thank-you-message p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* --- KOMPAKTE MOBILE-DARSTELLUNG --- */
-@media (max-width: 600px), (hover: none), (pointer: coarse) {
+@media (max-width: 768px) {
     body {
-        padding: 0.3rem;
-        font-size: 14px;
+        padding: 1rem;
+        background-color: #121212;
     }
 
     .container {
-        padding: 0.8rem;
-        max-width: 95vw;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(249, 87, 56, 0.3);
+        max-width: 90vw;
+        padding: 1rem;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .btn, .btn-primary {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.8rem !important;
+        border-width: 1.5px !important;
     }
 
     .header h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0.3rem;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem;
     }
 
     .subtitle {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .portrait {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 0.8rem;
-    }
-
-    .btn,
-    .btn-primary {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
-        border-radius: 16px;
-        line-height: 1.2;
+        width: 100px !important;
+        height: 100px !important;
     }
 
     .projects-list {
-        gap: 0.8rem;
+        gap: 1rem !important;
     }
 
-    .project h2 {
-        font-size: 1rem;
-        margin-bottom: 0.3rem;
+    /* Cursor komplett ausblenden auf Handy */
+    .custom-cursor,
+    .cursor-glow {
+        display: none !important;
+    }
+}
+
+/* Für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    .btn, .btn-primary {
+        font-size: 0.7rem !important;
+        padding: 0.3rem 0.6rem !important;
+        border-width: 1.2px !important;
     }
 
-    .project p {
-        font-size: 0.8rem;
-        line-height: 1.3;
-    }
-
-    .project-image {
-        max-width: 100%;
-        border-radius: 6px;
-        margin-top: 0.4rem;
-    }
-
-    .photo-gallery {
-        gap: 0.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    }
-
-    .photo {
-        width: 90px;
-        height: 90px;
-        border-radius: 6px;
-    }
-
-    .contact-container {
-        max-width: 92vw !important;
-        max-height: 80vh !important;
-        padding: 0.8rem !important;
-        border-radius: 8px !important;
-    }
-
-    .contact-container h1 {
+    .header h1 {
         font-size: 1.3rem !important;
-        margin-bottom: 0.3rem;
     }
 
-    .contact-container p {
-        font-size: 0.85rem !important;
-        margin-bottom: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        font-size: 0.8rem !important;
-        padding: 0.5rem 0.8rem !important;
-        border-radius: 6px !important;
-    }
-
-    .contact-form button {
+    .subtitle {
         font-size: 0.8rem !important;
     }
 
-    footer {
-        font-size: 0.6rem;
-        bottom: 4px;
+    .portrait {
+        width: 80px !important;
+        height: 80px !important;
     }
+}
+
+/*Icons*/
+.tech-icons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    cursor: default;
+    margin: 0 6px;
+    transition: filter 0.3s ease;
+}
+
+.tech-icons img:hover {
+    filter: brightness(0) invert(0.7) sepia(1) saturate(5) hue-rotate(10deg);
+}
+.about-text p {
+    text-align: left;      /* Text linksbündig */
+    max-width: 700px;      /* für angenehmere Lesebreite */
+    margin-bottom: 2rem;   /* größerer Abstand nach dem Absatz */
+    line-height: 1.6;      /* angenehme Zeilenhöhe */
+}
+
+
+.nav-links {
+    margin-top: 2rem;      /* Abstand vor den Buttons */
+    display: flex;
+    gap: 1rem;             /* Abstand zwischen den Buttons */
 }
