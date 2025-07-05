@@ -310,92 +310,96 @@ footer {
     line-height: 1.6;
 }
 
-/* --- Verbesserte MOBILE-Optimierung: luftiger, kleiner --- */
-@media (max-width: 600px) {
+/* --- KOMPAKTE MOBILE-DARSTELLUNG --- */
+@media (max-width: 600px), (hover: none), (pointer: coarse) {
     body {
-        padding: 1rem;
-        justify-content: flex-start;
-        align-items: flex-start;
+        padding: 0.5rem;
     }
 
-    .container,
-    .contact-container,
-    .thank-you-message {
-        max-width: 90vw;
-        padding: 1rem 1.2rem;
+    .container {
+        padding: 1rem;
+        max-width: 95vw;
         border-radius: 10px;
-        margin: 2rem auto;
-        box-shadow: 0 0 10px rgba(249, 87, 56, 0.5);
+        box-shadow: 0 0 10px rgba(249, 87, 56, 0.4);
     }
 
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-bottom: 0.5rem;
     }
 
     .subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
     .portrait {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 1.5rem;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
     }
 
     .btn,
-    .btn-primary,
-    .contact-form button {
-        font-size: 0.95rem !important;
-        padding: 0.75rem 1.2rem !important;
+    .btn-primary {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 20px;
     }
 
     .projects-list {
-        gap: 1.2rem;
+        gap: 1rem;
     }
 
     .project h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .project p {
         font-size: 0.9rem;
     }
 
+    .project-image {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+
+    .photo-gallery {
+        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
     .photo {
         width: 100px;
         height: 100px;
+        border-radius: 8px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.8rem;
+    .contact-container {
+        max-width: 92vw !important;
+        max-height: 80vh !important;
+        padding: 1rem !important;
+        border-radius: 10px !important;
     }
 
     .contact-container h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .contact-container p {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
     }
 
-    .thank-you-message h1 {
-        font-size: 1.6rem;
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 0.9rem !important;
+        border-radius: 6px !important;
     }
 
-    .thank-you-message p {
-        font-size: 0.95rem;
-    }
-
-    .custom-cursor,
-    .cursor-glow {
-        display: none !important;
-    }
-
-    body, button, a, input, textarea {
-        cursor: auto !important;
+    footer {
+        font-size: 0.7rem;
+        bottom: 5px;
     }
 }
