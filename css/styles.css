@@ -387,8 +387,8 @@ footer {
     }
 
     .portrait {
-        width: 200px !important;
-        height: 200px !important;
+        width: 150px !important;
+        height: 150px !important;
     }
     .tech-icons img {
         width: 10px;
@@ -404,3 +404,11 @@ button, a, input, textarea {
     tap-highlight-color: transparent;
 }
 
+/* Lightbox Anpassung */
+.lb-data .lb-caption {
+    color: #f95738 !important;
+    font-weight: bold;
+}
+.lb-data .lb-number {
+    color: #aaa !important;
+}
