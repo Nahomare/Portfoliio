@@ -310,106 +310,92 @@ footer {
     line-height: 1.6;
 }
 
-/* --- KOMPAKTE MOBILE-DARSTELLUNG --- */
-@media (max-width: 600px), (hover: none), (pointer: coarse) {
+/* --- Verbesserte MOBILE-Optimierung: luftiger, kleiner --- */
+@media (max-width: 600px) {
     body {
-        padding: 0.3rem;
-        font-size: 14px;
+        padding: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
-    .container {
-        padding: 0.8rem;
-        max-width: 95vw;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(249, 87, 56, 0.3);
+    .container,
+    .contact-container,
+    .thank-you-message {
+        max-width: 90vw;
+        padding: 1rem 1.2rem;
+        border-radius: 10px;
+        margin: 2rem auto;
+        box-shadow: 0 0 10px rgba(249, 87, 56, 0.5);
     }
 
     .header h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0.3rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
     }
 
     .subtitle {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
     }
 
     .portrait {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 0.8rem;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
     }
 
     .btn,
-    .btn-primary {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
-        border-radius: 16px;
-        line-height: 1.2;
+    .btn-primary,
+    .contact-form button {
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1.2rem !important;
     }
 
     .projects-list {
-        gap: 0.8rem;
+        gap: 1.2rem;
     }
 
     .project h2 {
-        font-size: 1rem;
-        margin-bottom: 0.3rem;
+        font-size: 1.2rem;
     }
 
     .project p {
-        font-size: 0.8rem;
-        line-height: 1.3;
-    }
-
-    .project-image {
-        max-width: 100%;
-        border-radius: 6px;
-        margin-top: 0.4rem;
-    }
-
-    .photo-gallery {
-        gap: 0.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        font-size: 0.9rem;
     }
 
     .photo {
-        width: 90px;
-        height: 90px;
-        border-radius: 6px;
-    }
-
-    .contact-container {
-        max-width: 92vw !important;
-        max-height: 80vh !important;
-        padding: 0.8rem !important;
-        border-radius: 8px !important;
-    }
-
-    .contact-container h1 {
-        font-size: 1.3rem !important;
-        margin-bottom: 0.3rem;
-    }
-
-    .contact-container p {
-        font-size: 0.85rem !important;
-        margin-bottom: 1rem;
+        width: 100px;
+        height: 100px;
     }
 
     .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        font-size: 0.8rem !important;
-        padding: 0.5rem 0.8rem !important;
-        border-radius: 6px !important;
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
     }
 
-    .contact-form button {
-        font-size: 0.8rem !important;
+    .contact-container h1 {
+        font-size: 1.5rem;
     }
 
-    footer {
-        font-size: 0.6rem;
-        bottom: 4px;
+    .contact-container p {
+        font-size: 0.9rem;
+    }
+
+    .thank-you-message h1 {
+        font-size: 1.6rem;
+    }
+
+    .thank-you-message p {
+        font-size: 0.95rem;
+    }
+
+    .custom-cursor,
+    .cursor-glow {
+        display: none !important;
+    }
+
+    body, button, a, input, textarea {
+        cursor: auto !important;
     }
 }
