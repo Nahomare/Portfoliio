@@ -1,6 +1,6 @@
 /* Reset & Basis */
-body {
-    cursor: none;
+body, button, a, input, textarea {
+    cursor: none !important;
 }
 
 * {
@@ -413,13 +413,4 @@ button, a, input, textarea {
     color: #aaa !important;
 }
 
-/*Lightbox Default Zeiger*/
-
-body.show-system-cursor,
-body.show-system-cursor button,
-body.show-system-cursor a,
-body.show-system-cursor input,
-body.show-system-cursor textarea {
-    cursor: default !important;
-}
 

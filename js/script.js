@@ -105,27 +105,4 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 } else {
     console.log("Lightbox geladen ✅");
 }
-    /*lightbox erst laden, wenn dom geladen ist*/
-window.addEventListener("DOMContentLoaded", () => {
-    if (typeof lightbox !== 'undefined') {
-        console.log("✅ Lightbox ist bereit");
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'alwaysShowNavOnTouchDevices': true,
-            onOpen: function () {
-                document.body.classList.add("show-default-cursor");
-                document.querySelector(".custom-cursor")?.style.setProperty("display", "none");
-                document.querySelector(".cursor-glow")?.style.setProperty("display", "none");
-            },
-            onClose: function () {
-                document.body.classList.remove("show-default-cursor");
-                document.querySelector(".custom-cursor")?.style.setProperty("display", "block");
-                document.querySelector(".cursor-glow")?.style.setProperty("display", "block");
-            }
-        });
-    } else {
-        console.error("❌ Lightbox wurde nicht gefunden.");
-    }
-});
 

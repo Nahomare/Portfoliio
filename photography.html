@@ -63,30 +63,6 @@
     }
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const customCursor = document.querySelector('.custom-cursor');
-        const cursorGlow = document.querySelector('.cursor-glow');
-
-        const observer = new MutationObserver(() => {
-            const isLightboxOpen = document.querySelector('.lightboxOverlay')?.style.display === 'block';
-
-            if (isLightboxOpen) {
-                document.body.style.cursor = 'default';
-                if (customCursor) customCursor.style.display = 'none';
-                if (cursorGlow) cursorGlow.style.display = 'none';
-            } else {
-                document.body.style.cursor = 'none';
-                if (customCursor) customCursor.style.display = 'block';
-                if (cursorGlow) cursorGlow.style.display = 'block';
-            }
-        });
-
-        observer.observe(document.body, { childList: true, subtree: true });
-    });
-</script>
-
-
 
 </body>
 </html>

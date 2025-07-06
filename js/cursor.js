@@ -12,30 +12,16 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = `${y}px`;
 });
 
-if (typeof lightbox !== 'undefined') {
-    lightbox.option({
-        onOpen: function () {
-            // Systemcursor aktivieren
-            document.body.classList.add("show-default-cursor");
-
-            // Custom-Cursor ausblenden
-            const cc = document.querySelector(".custom-cursor");
-            const glow = document.querySelector(".cursor-glow");
-            if (cc) cc.style.display = "none";
-            if (glow) glow.style.display = "none";
-        },
-        onClose: function () {
-            // Systemcursor deaktivieren
-            document.body.classList.remove("show-default-cursor");
-
-            // Custom-Cursor wieder anzeigen
-            const cc = document.querySelector(".custom-cursor");
-            const glow = document.querySelector(".cursor-glow");
-            if (cc) cc.style.display = "block";
-            if (glow) glow.style.display = "block";
-        }
-    });
-}
-
-
-
+// Lightbox2 Callback einrichten
+lightbox.option({
+    onOpen: function() {
+        cursor.style.display = 'none';
+        glow.style.display = 'none';
+        document.body.style.cursor = 'default';
+    },
+    onClose: function() {
+        cursor.style.display = 'block';
+        glow.style.display = 'block';
+        document.body.style.cursor = 'none';
+    }
+});
