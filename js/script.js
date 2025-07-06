@@ -61,7 +61,7 @@ animateParticles();
 
 // Danke message
 
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
+document.getElementById("contact-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const form = e.target;
@@ -71,7 +71,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     try {
         const res = await fetch("https://formspree.io/f/xkgbajbj", {
             method: "POST",
-            headers: { "Accept": "application/json" },
+            headers: {"Accept": "application/json"},
             body: formData
         });
 
@@ -98,3 +98,24 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         console.error(err);
     }
 });
+
+/* lightbox test*/
+<!-- jQuery zuerst -->
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+
+src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"
+
+
+    if (typeof lightbox === 'undefined') {
+    console.error("Lightbox wurde nicht geladen.");
+} else {
+    console.log("Lightbox geladen ✅");
+}
+
+
+    if (typeof lightbox === 'undefined') {
+    console.error("Lightbox wurde nicht geladen.");
+} else {
+    console.log("Lightbox geladen ✅");
+}
+
