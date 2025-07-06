@@ -374,6 +374,7 @@ body {
         padding: 1rem;
         background: transparent;
         box-shadow: none;
+        margin-top: 1rem;
     }
 
     .btn, .btn-primary {
@@ -422,6 +423,9 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container {
+        margin-top: 1rem;
+    }
     .btn, .btn-primary {
         font-size: 0.7rem !important;
         padding: 0.3rem 0.6rem !important;
