@@ -1,7 +1,12 @@
 /* Reset & Basis */
-body, button, a, input, textarea {
+body:not(.show-system-cursor),
+body:not(.show-system-cursor) button,
+body:not(.show-system-cursor) a,
+body:not(.show-system-cursor) input,
+body:not(.show-system-cursor) textarea {
     cursor: none !important;
 }
+
 
 * {
     margin: 0;

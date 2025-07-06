@@ -14,20 +14,25 @@ document.addEventListener("mousemove", (e) => {
 
 lightbox.option({
     onOpen: function () {
-        // Custom-Cursor ausblenden
-        document.querySelector(".custom-cursor").style.display = "none";
-        document.querySelector(".cursor-glow").style.display = "none";
-
-        // System-Cursor aktivieren
+        // Systemcursor aktivieren
         document.body.classList.add("show-system-cursor");
+
+        // Custom-Cursor ausblenden
+        const cc = document.querySelector(".custom-cursor");
+        const glow = document.querySelector(".cursor-glow");
+        if (cc) cc.style.display = "none";
+        if (glow) glow.style.display = "none";
     },
     onClose: function () {
-        // Custom-Cursor wieder zeigen
-        document.querySelector(".custom-cursor").style.display = "block";
-        document.querySelector(".cursor-glow").style.display = "block";
-
-        // System-Cursor wieder entfernen
+        // Systemcursor deaktivieren
         document.body.classList.remove("show-system-cursor");
+
+        // Custom-Cursor wieder anzeigen
+        const cc = document.querySelector(".custom-cursor");
+        const glow = document.querySelector(".cursor-glow");
+        if (cc) cc.style.display = "block";
+        if (glow) glow.style.display = "block";
     }
 });
+
 
