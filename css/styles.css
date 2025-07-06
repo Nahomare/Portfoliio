@@ -412,3 +412,14 @@ button, a, input, textarea {
 .lb-data .lb-number {
     color: #aaa !important;
 }
+
+/*Lightbox Default Zeiger*/
+
+body.show-system-cursor,
+body.show-system-cursor button,
+body.show-system-cursor a,
+body.show-system-cursor input,
+body.show-system-cursor textarea {
+    cursor: default !important;
+}
+
