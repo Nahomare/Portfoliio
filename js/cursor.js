@@ -12,27 +12,30 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = `${y}px`;
 });
 
-lightbox.option({
-    onOpen: function () {
-        // Systemcursor aktivieren
-        document.body.classList.add("show-system-cursor");
+if (typeof lightbox !== 'undefined') {
+    lightbox.option({
+        onOpen: function () {
+            // Systemcursor aktivieren
+            document.body.classList.add("show-default-cursor");
 
-        // Custom-Cursor ausblenden
-        const cc = document.querySelector(".custom-cursor");
-        const glow = document.querySelector(".cursor-glow");
-        if (cc) cc.style.display = "none";
-        if (glow) glow.style.display = "none";
-    },
-    onClose: function () {
-        // Systemcursor deaktivieren
-        document.body.classList.remove("show-system-cursor");
+            // Custom-Cursor ausblenden
+            const cc = document.querySelector(".custom-cursor");
+            const glow = document.querySelector(".cursor-glow");
+            if (cc) cc.style.display = "none";
+            if (glow) glow.style.display = "none";
+        },
+        onClose: function () {
+            // Systemcursor deaktivieren
+            document.body.classList.remove("show-default-cursor");
 
-        // Custom-Cursor wieder anzeigen
-        const cc = document.querySelector(".custom-cursor");
-        const glow = document.querySelector(".cursor-glow");
-        if (cc) cc.style.display = "block";
-        if (glow) glow.style.display = "block";
-    }
-});
+            // Custom-Cursor wieder anzeigen
+            const cc = document.querySelector(".custom-cursor");
+            const glow = document.querySelector(".cursor-glow");
+            if (cc) cc.style.display = "block";
+            if (glow) glow.style.display = "block";
+        }
+    });
+}
+
 
 

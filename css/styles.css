@@ -1,9 +1,7 @@
 /* Reset & Basis */
-body:not(.show-system-cursor),
-body:not(.show-system-cursor) button,
-body:not(.show-system-cursor) a,
-body:not(.show-system-cursor) input,
-body:not(.show-system-cursor) textarea {
+body:not(.show-default-cursor),
+body:not(.show-default-cursor) *,
+*:not(body).force-hide-cursor {
     cursor: none !important;
 }
 
