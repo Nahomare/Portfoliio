@@ -28,25 +28,29 @@ body, button, a, input, textarea {
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Wichtig: Align top, nicht center */
     min-height: 100vh;
+    cursor: none;
     position: relative;
-    padding: 0;
+    padding: 1rem 0; /* Optional etwas Luft oben und unten */
 }
 
-/* ========== Layout ========== */
 .container {
     text-align: center;
     max-width: 480px;
-    padding: 2rem;
-    background: var(--bg-light);
-    border-radius: var(--radius);
-    box-shadow: var(--box-shadow);
+    padding: 2rem 2rem 3rem; /* Oben 2rem Luft, unten 3rem */
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(249, 87, 56, 0.7);
+    margin-top: 1rem; /* Kleine Lücke zum Seitenanfang */
 }
+
+
 
 /* ========== Header ========== */
 .header h1 {
@@ -127,15 +131,12 @@ body {
 }
 
 /* ========== Footer ========== */
-footer,
+/* Footer zentriert unten */
 .footer {
     margin-top: 2.5rem;
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: #777;
     text-align: center;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
 }
 
 /* ========== Projects ========== */
