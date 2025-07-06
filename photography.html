@@ -40,14 +40,25 @@
         <p>© 2025 Nati – Alle Rechte vorbehalten.</p>
     </footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<!-- jQuery zuerst -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Lightbox2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
 <script>
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true,
-        'alwaysShowNavOnTouchDevices': true
-    });
+    if (typeof lightbox === 'undefined') {
+        console.error("❌ Lightbox wurde nicht geladen.");
+    } else {
+        console.log("✅ Lightbox geladen");
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'alwaysShowNavOnTouchDevices': true
+        });
+    }
 </script>
+
 <script src="js/cursor.js"></script>
 <script src="js/script.js"></script>
 </body>

@@ -100,12 +100,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 });
 
 /* lightbox test*/
-<!-- jQuery zuerst -->
-src="https://code.jquery.com/jquery-3.6.0.min.js"
-
-src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"
-
-
     if (typeof lightbox === 'undefined') {
     console.error("Lightbox wurde nicht geladen.");
 } else {
