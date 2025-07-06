@@ -12,16 +12,19 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = `${y}px`;
 });
 
-// Lightbox2 Callback einrichten
 lightbox.option({
     onOpen: function() {
+        // Custom Cursor ausblenden
         cursor.style.display = 'none';
         glow.style.display = 'none';
+        // Standard-Cursor anzeigen
         document.body.style.cursor = 'default';
     },
     onClose: function() {
+        // Custom Cursor einblenden
         cursor.style.display = 'block';
         glow.style.display = 'block';
+        // Standard-Cursor verstecken
         document.body.style.cursor = 'none';
     }
 });

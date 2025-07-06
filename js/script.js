@@ -106,10 +106,3 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     console.log("Lightbox geladen ✅");
 }
 
-
-    if (typeof lightbox === 'undefined') {
-    console.error("Lightbox wurde nicht geladen.");
-} else {
-    console.log("Lightbox geladen ✅");
-}
-
