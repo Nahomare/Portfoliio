@@ -71,7 +71,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     try {
         const res = await fetch("https://formspree.io/f/xkgbajbj", {
             method: "POST",
-            headers: {"Accept": "application/json"},
+            headers: { "Accept": "application/json" },
             body: formData
         });
 
@@ -81,16 +81,19 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
             let seconds = 15;
             const countdown = document.getElementById("countdown");
+
+            const redirectTo = window.location.pathname.includes("_en") ? "index_en.html" : "index.html";
+
             const timer = setInterval(() => {
                 seconds--;
                 countdown.textContent = seconds;
                 if (seconds <= 0) {
                     clearInterval(timer);
-                    window.location.href = "index.html"; // oder deine Startseite
+                    window.location.href = redirectTo;
                 }
             }, 1000);
         } else {
-            alert("Fehler beim Senden. Bitte versuche es erneut.");
+            alert("Es gab einen Fehler beim Senden des Formulars. Bitte versuche es erneut.");
         }
 
     } catch (err) {

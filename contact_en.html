@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Nati</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div class="custom-cursor"></div>
+<div class="cursor-glow"></div>
+
+<div class="contact-container">
+    <h1>Contact</h1>
+    <p>Feel free to send me a message:</p>
+
+    <form id="contact-form" class="contact-form">
+        <input type="hidden" name="_subject" value="New message via contact form">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <label for="email">Your Email*</label>
+        <input type="email" id="email" name="email" required placeholder="e.g. you@mail.com" />
+
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" rows="5" required placeholder="What would you like to tell me?"></textarea>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+
+        <div style="margin-top: 1rem;">
+            <a href="index_en.html" class="btn btn-back">← Back to Home</a>
+        </div>
+    </form>
+
+    <div class="thank-you-message" style="display: none;">
+        <h1>Thanks for your message!</h1>
+        <p>I’ll get back to you as soon as possible.<br>
+            In the meantime, feel free to check out my <a href="projects_en.html" class="highlight-link">projects</a>.</p>
+        <p>You’ll be redirected to the homepage in <span id="countdown">15</span> seconds.</p>
+    </div>
+</div>
+
+<footer>
+    <small>© 2025 Nati – All rights reserved.</small>
+</footer>
+
+<script src="js/cursor.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

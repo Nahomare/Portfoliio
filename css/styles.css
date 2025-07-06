@@ -414,3 +414,26 @@ button, a, input, textarea {
 }
 
 
+.language-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    display: block;
+}
+
+.flag-icon {
+    width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.language-btn:hover .flag-icon {
+    transform: scale(1.1);
+}
