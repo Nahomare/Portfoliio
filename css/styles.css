@@ -21,68 +21,53 @@
     box-sizing: border-box;
 }
 
-body, button, a, input, textarea {
+html, body {
+    height: 100%;              /* Wichtig für volle Höhe */
+    margin: 0;                 /* Kein Margin für body/html */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     font-family: var(--font-main);
-    cursor: none !important;
-    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;        /* Kein horizontal scroll */
+    overflow-y: auto;          /* Vertikaler Scroll nur wenn nötig */
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Poppins', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Wichtig: Align top, nicht center */
+    flex-direction: column;
     min-height: 100vh;
-    cursor: none;
+    cursor: none !important;
     position: relative;
-    padding: 1rem 0; /* Optional etwas Luft oben und unten */
+    padding: 1rem 0;           /* Optional etwas Luft oben und unten */
+    justify-content: flex-start; /* Inhalt oben anordnen */
+    align-items: center;       /* Container horizontal zentrieren */
 }
 
 .container {
-    text-align: center;
+    flex: 0 0 auto;            /* Nimmt nur so viel Platz wie nötig ein */
     max-width: 480px;
-    padding: 2rem 2rem 3rem; /* Oben 2rem Luft, unten 3rem */
-    background: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(249, 87, 56, 0.7);
-    margin-top: 1rem; /* Kleine Lücke zum Seitenanfang */
+    padding: 2rem 2rem 3rem;   /* Oben 2rem, unten 3rem Abstand */
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 1rem;          /* Abstand oben */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-
+/* ========== Footer ========== */
+.footer {
+    margin-top: auto;          /* Drückt Footer nach unten */
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-align: center;
+}
 
 /* ========== Header ========== */
 .header h1 {
     font-weight: 700;
     font-size: 2.8rem;
     margin-bottom: 0.4rem;
-}
-
-.subtitle {
-    font-weight: 300;
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.highlight {
-    color: var(--primary);
-}
-
-/* ========== Portrait ========== */
-.portrait {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 20px var(--primary);
-    transition: transform var(--transition);
-}
-
-.portrait:hover {
-    transform: scale(1.05);
 }
 
 /* ========== Buttons & Navigation ========== */
@@ -130,13 +115,19 @@ body {
     white-space: nowrap;
 }
 
-/* ========== Footer ========== */
-/* Footer zentriert unten */
-.footer {
-    margin-top: 2.5rem;
-    font-size: 0.9rem;
-    color: #777;
-    text-align: center;
+/* ========== Portrait ========== */
+.portrait {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px var(--primary);
+    transition: transform var(--transition);
+}
+
+.portrait:hover {
+    transform: scale(1.05);
 }
 
 /* ========== Projects ========== */
@@ -383,42 +374,13 @@ body {
         border-width: 1.5px !important;
     }
 
-    .header h1 {
-        font-size: 1.5rem !important;
-    }
-
-    .subtitle {
-        font-size: 0.9rem !important;
-    }
-
     .portrait {
-        width: 200px !important;
-        height: 200px !important;
+        width: 140px;
+        height: 140px;
     }
 
-    .projects-list {
-        gap: 1rem !important;
-    }
-
-    .custom-cursor,
-    .cursor-glow {
-        display: none !important;
-    }
-
-    .tech-icons img {
-        width: 12px !important;
-        height: 12px !important;
-    }
-
-    .language-btn {
-        width: 32px;
-        height: 24px;
-        top: 12px;
-        right: 12px;
-    }
-
-    .flag-icon {
-        border-width: 1px;
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     }
 }
 
@@ -426,38 +388,8 @@ body {
     .container {
         margin-top: 1rem;
     }
-    .btn, .btn-primary {
-        font-size: 0.7rem !important;
-        padding: 0.3rem 0.6rem !important;
-        border-width: 1.2px !important;
-    }
 
     .header h1 {
-        font-size: 1.3rem !important;
-    }
-
-    .subtitle {
-        font-size: 0.8rem !important;
-    }
-
-    .portrait {
-        width: 150px !important;
-        height: 150px !important;
-    }
-
-    .tech-icons img {
-        width: 10px !important;
-        height: 10px !important;
-    }
-
-    .language-btn {
-        width: 28px;
-        height: 20px;
-        top: 10px;
-        right: 10px;
-    }
-
-    .flag-icon {
-        border-width: 1px;
+        font-size: 2rem;
     }
 }
