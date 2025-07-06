@@ -1,10 +1,7 @@
 /* Reset & Basis */
-body:not(.show-default-cursor),
-body:not(.show-default-cursor) *,
-*:not(body).force-hide-cursor {
-    cursor: none !important;
+body {
+    cursor: none;
 }
-
 
 * {
     margin: 0;
