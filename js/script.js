@@ -47,7 +47,6 @@ function animateParticles() {
         ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(0.85, 0.2 + glow / 150)})`; // mehr Leuchten
         ctx.fill();
 
-
         // Partikel zurücksetzen, wenn außerhalb
         if (p.x < 0 || p.x > w) p.dx *= -1;
         if (p.y < 0 || p.y > h) p.dy *= -1;
@@ -58,51 +57,55 @@ function animateParticles() {
 
 animateParticles();
 
+// Listener erst nach DOMContentLoaded hinzufügen
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-// Danke message
+            const form = e.target;
+            const formData = new FormData(form);
+            const thankYou = document.querySelector(".thank-you-message");
 
-document.getElementById("contact-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
+            try {
+                const res = await fetch("https://formspree.io/f/xkgbajbj", {
+                    method: "POST",
+                    headers: { "Accept": "application/json" },
+                    body: formData
+                });
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const thankYou = document.querySelector(".thank-you-message");
+                if (res.ok) {
+                    form.style.display = "none";
+                    thankYou.style.display = "block";
 
-    try {
-        const res = await fetch("https://formspree.io/f/xkgbajbj", {
-            method: "POST",
-            headers: {"Accept": "application/json"},
-            body: formData
-        });
-
-        if (res.ok) {
-            form.style.display = "none";
-            thankYou.style.display = "block";
-
-            let seconds = 15;
-            const countdown = document.getElementById("countdown");
-            const timer = setInterval(() => {
-                seconds--;
-                countdown.textContent = seconds;
-                if (seconds <= 0) {
-                    clearInterval(timer);
-                    window.location.href = "index.html"; // oder deine Startseite
+                    let seconds = 15;
+                    const countdown = document.getElementById("countdown");
+                    const timer = setInterval(() => {
+                        seconds--;
+                        countdown.textContent = seconds;
+                        if (seconds <= 0) {
+                            clearInterval(timer);
+                            window.location.href = "index.html"; // oder deine Startseite
+                        }
+                    }, 1000);
+                } else {
+                    alert("Fehler beim Senden. Bitte versuche es erneut.");
                 }
-            }, 1000);
-        } else {
-            alert("Fehler beim Senden. Bitte versuche es erneut.");
-        }
 
-    } catch (err) {
-        alert("Verbindungsfehler. Bitte später nochmal probieren.");
-        console.error(err);
+            } catch (err) {
+                alert("Verbindungsfehler. Bitte später nochmal probieren.");
+                console.error(err);
+            }
+        });
+    } else {
+        console.error("Formular mit ID 'contact-form' wurde nicht gefunden.");
     }
 });
 
 /* lightbox test*/
-    if (typeof lightbox === 'undefined') {
+if (typeof lightbox === 'undefined') {
     console.error("Lightbox wurde nicht geladen.");
 } else {
     console.log("Lightbox geladen ✅");
 }
-
